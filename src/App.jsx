@@ -1,4 +1,4 @@
-import { Home } from './components/HomeTEMP';
+import { Home } from './components/Home';
 
 
 function App() {

@@ -46,7 +46,7 @@ export function Home()  {
   }
   return (
     <section className="p-5 flex flex-col justify-center text-center">
-        <h1 className="bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-clip-text text-transparent font-bold text-5xl my-5">Random Picker</h1>
+        <h1 className="bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-clip-text text-transparent font-bold text-[40px] sm:text-5xl my-5">Random Picker</h1>
         
         <InputBox addText={addText}/>
 

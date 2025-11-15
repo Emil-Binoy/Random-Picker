@@ -20,7 +20,7 @@ export const InputBox = ({addText}) => {
             }
           }}
           placeholder="Enter text here..." 
-          className=" w-62 sm:max-w-65 mr-2 border-2 border-purple-400 rounded-md my-4 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-purple-600 "
+          className=" w-53 md:w-65 sm:w-60 mr-2 border-2 border-purple-400 rounded-md my-4 p-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-purple-600 "
           />
           <button 
             onClick={sendText}

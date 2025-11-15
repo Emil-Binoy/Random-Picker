@@ -4,7 +4,7 @@ import { Popup } from "./Popup";
 import { InputBox } from "./InputBox";
 import {runConfetti} from "../confetti"
 
-export const Home = () => {
+export function Home()  {
   const [list, setList]=useState([])
   const [selected, setSelected] = useState(null)
   const [popup, setPopup] = useState(false)

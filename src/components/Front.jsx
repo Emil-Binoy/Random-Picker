@@ -32,6 +32,7 @@ export function Home()  {
   const pickRandom=()=>{
     if (list.length===0){
       setWarn(true);
+      navigator.vibrate(500);
       return;
     }
 

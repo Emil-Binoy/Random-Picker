@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { List } from "./List";
 import { Popup } from "./Popup";
 import { InputBox } from "./InputBox";
@@ -11,18 +11,44 @@ export function Home()  {
   const [warn, setWarn] = useState(false)
 
   const addText =(name)=>{
-    if(!name.trim()){
-      return;
-    } 
-    setList([...list,name]);
+    const newName = name.trim();
+    if (!newName) return;
+    
+    for(let i=0;i<list.length;i++){
+      if(list[i].toLowerCase()===newName.toLowerCase()){
+        alert(`${newName} is already existing in the list.`);
+        return;
+      }
+    }
+    
+    setList([...list,newName]);
     setWarn(false)
   }
 
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("rp_list");
+    if (saved) {
+      setList(JSON.parse(saved));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    localStorage.setItem("rp_list", JSON.stringify(list));
+  }, [list]);
+
+  
   const clearAll=()=>{
     const ok = window.confirm('Do you want to clear all list ?');
     if(!ok) {return;}
 
     setList([]);
+    localStorage.removeItem("rp_list");
   }
 
   const deleteItem=(index)=>{

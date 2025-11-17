@@ -16,7 +16,7 @@ export const List = ({list,deleteItem,clearAll}) => {
           {
             list.map((n,i)=>(
               <li key={i} className="border-b border-gray-300 flex justify-between items-center py-1 transition duration-200 ease-in-out transform hover:scale-110 hover:-translate-y-1">
-                <span>{n}</span>
+                <span>{i+1}. {n}</span>
                 <button 
                 className="text-red-600 text-end hover:text-red-800 transition-colors duration-200"
                 onClick={()=> deleteItem(i)}
